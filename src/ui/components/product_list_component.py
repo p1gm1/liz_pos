@@ -45,7 +45,7 @@ class ProductListComponent:
         """Carga productos según término de búsqueda"""
         if search_term and len(search_term.strip()) > 0:
             return self.product_service.search_products(search_term.strip())
-        return self.product_service.get_all_products()
+        return self.product_service.get_all_products_any_status()
     
     def _render_empty_state(self) -> None:
         """Renderiza estado cuando no hay productos"""

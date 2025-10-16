@@ -113,15 +113,21 @@ class ProductService:
     
     def get_product_by_code(self, code: str) -> Optional[Product]:
         return self.repository.get_by_code(code)
+
+    def get_product_by_code_any_status(self, code: str) -> Optional[Product]:
+        return self.repository.get_by_code_any_status(code)
     
     def get_all_products(self) -> List[Product]:
         return self.repository.get_all()
+
+    def get_all_products_any_status(self) -> List[Product]:
+        return self.repository.get_all_any_status()
     
     def delete_product(self, product_id: int) -> bool:
         return self.repository.delete(product_id)
 
     def search_products(self, search_term: str) -> List[Product]:
-        all_products = self.repository.get_all()
+        all_products = self.repository.get_all_any_status()
         search_term_lower = search_term.lower()
         
         return [

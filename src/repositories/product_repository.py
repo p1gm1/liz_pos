@@ -34,6 +34,19 @@ class ProductRepository(BaseRepository[Product]):
         except Exception as e:
             self.logger.error(f"Error getting product by code {code}: {str(e)}")
             return None
+
+    def get_by_code_any_status(self, code: str) -> Optional[Product]:
+        """Obtiene producto por código sin importar su estado"""
+        try:
+            db_product = self.session.query(ProductModel).filter(
+                ProductModel.code == code
+            ).first()
+            if db_product:
+                return self._to_entity(db_product)
+            return None
+        except Exception as e:
+            self.logger.error(f"Error getting product by code {code}: {str(e)}")
+            return None
     
     def get_all(self) -> List[Product]:
         try:
@@ -42,11 +55,19 @@ class ProductRepository(BaseRepository[Product]):
         except Exception as e:
             self.logger.error(f"Error getting all products: {str(e)}")
             return []
+
+    def get_all_any_status(self) -> List[Product]:
+        try:
+            db_products = self.session.query(ProductModel).all()
+            return [self._to_entity(product) for product in db_products]
+        except Exception as e:
+            self.logger.error(f"Error getting all products: {str(e)}")
+            return []
     
     def create(self, entity: Product) -> Product:
         try:
             if entity.code:
-                existing = self.get_by_code(entity.code)
+                existing = self.get_by_code_any_status(entity.code)
                 if existing:
                     raise ValueError(f"Ya existe un producto con el código: {entity.code}")
             
@@ -69,7 +90,7 @@ class ProductRepository(BaseRepository[Product]):
             db_product = self.session.query(ProductModel).filter(ProductModel.id == entity.id).first()
             if db_product:
                 if entity.code and entity.code != db_product.code:
-                    existing = self.get_by_code(entity.code)
+                    existing = self.get_by_code_any_status(entity.code)
                     if existing and existing.id != entity.id:
                         raise ValueError(f"Ya existe un producto con el código: {entity.code}")
                 

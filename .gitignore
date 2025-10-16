@@ -5,3 +5,4 @@ pos_system.db
 pos_system_20251016.log
 agregar-productos.csv
 eliminar-productos.csv
+**/__pycache__/**

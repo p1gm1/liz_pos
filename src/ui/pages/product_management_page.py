@@ -120,7 +120,7 @@ class ProductManagementPage(BasePage):
 
         csv_action = st.selectbox(
             "Seleccione la acción a realizar con el CSV:",
-            ("Eliminar productos", "Añadir nuevos productos")
+            ("Eliminar productos", "Añadir y/o actualizar productos")
         )
 
         uploaded_file = st.file_uploader(
@@ -137,9 +137,9 @@ class ProductManagementPage(BasePage):
                     args=(uploaded_file,),
                     key="csv_delete_button"
                 )
-            elif csv_action == "Añadir nuevos productos":
+            elif csv_action == "Añadir y/o actualizar productos":
                 st.button(
-                    "✨ Añadir Productos desde CSV",
+                    "✨ Añadir y/o Actualizar Productos desde CSV",
                     on_click=self._handle_add_products_csv,
                     args=(uploaded_file,),
                     key="csv_add_button"
@@ -211,6 +211,7 @@ class ProductManagementPage(BasePage):
 
         try:
             df = pd.read_csv(uploaded_file)
+
             if "code" not in df.columns:
                 st.error("El archivo CSV debe contener la columna 'code'.")
                 return
@@ -220,6 +221,7 @@ class ProductManagementPage(BasePage):
 
             for code in df["code"]:
                 product = self.product_service.get_product_by_code(str(code))
+                
                 if product:
                     self.product_service.delete_product(product.id)
                     deleted_count += 1
@@ -245,7 +247,7 @@ class ProductManagementPage(BasePage):
         st.rerun()
 
     def _handle_add_products_csv(self, uploaded_file) -> None:
-        """Maneja la subida de un CSV para añadir nuevos productos."""
+        """Maneja la subida de un CSV para añadir o actualizar productos."""
         if not uploaded_file:
             st.warning("Por favor, sube un archivo CSV.")
             return
@@ -253,55 +255,58 @@ class ProductManagementPage(BasePage):
         try:
             df = pd.read_csv(uploaded_file)
 
-            required_cols = [
-                "code",
-                "name",
-                "description",
-                "price",
-                "cost",
-                "category",
-            ]
-            if not all(col in df.columns for col in required_cols):
-                st.error(f"El archivo CSV debe contener las columnas: {', '.join(required_cols)}.")
+            if "code" not in df.columns:
+                st.error("El archivo CSV debe contener la columna 'code'.")
                 return
 
             added_count = 0
-            skipped_codes = []
+            updated_count = 0
+            not_added_codes = []
 
             for index, row in df.iterrows():
                 code = str(row["code"])
-                description = str(row["description"])
-                name = str(row["name"])
-                price = str(row["price"])
-                cost = str(row["cost"])
-                category = str(row["category"])
+                existing_product = self.product_service.get_product_by_code_any_status(code)
 
-                if self.product_service.get_product_by_code(code):
-                    skipped_codes.append(code)
-                    continue
+                if existing_product:
+                    product_data = {}
+                    for col in df.columns:
+                        if col != "code" and pd.notna(row[col]):
+                            product_data[col] = row[col]
 
-                product_data = {
-                    "code": code,
-                    "name": name,
-                    "description": description,
-                    "price": price if price else 0,
-                    "cost": cost if price else 0,
-                    "category": category,
-                }
-                
-                self.product_service.create_product(product_data)
-                added_count += 1
+                    if "is_active" not in product_data:
+                        product_data["is_active"] = True
+                    
+                    if product_data:
+                        self.product_service.update_product(existing_product.id, product_data)
+                        updated_count += 1
+                else:
+                    required_cols_for_creation = ["name", "price", "cost", "category"]
+                    if all(col in df.columns and pd.notna(row[col]) for col in required_cols_for_creation):
+                        product_data = {
+                            "code": code,
+                            "name": str(row["name"]),
+                            "description": str(row.get("description", "")),
+                            "price": float(row["price"]),
+                            "cost": float(row["cost"]),
+                            "category": str(row["category"]),
+                            "is_active": True 
+                        }
+                        self.product_service.create_product(product_data)
+                        added_count += 1
+                    else:
+                        not_added_codes.append(code)
 
             if added_count > 0:
                 st.success(f"{added_count} nuevos productos añadidos correctamente.")
-            
-            if skipped_codes:
-                st.warning(f"Se omitieron los siguientes códigos porque ya existen: {', '.join(skipped_codes)}")
+            if updated_count > 0:
+                st.success(f"{updated_count} productos actualizados correctamente.")
+            if not_added_codes:
+                st.warning(f"No se pudieron añadir los siguientes códigos por falta de datos: {', '.join(not_added_codes)}")
 
             st.rerun()
 
         except Exception as e:
-            self.logger.error(f"Error al procesar el archivo CSV para añadir productos: {e}")
+            self.logger.error(f"Error al procesar el archivo CSV para añadir/actualizar productos: {e}")
             st.error(f"Ocurrió un error al procesar el archivo: {e}")
 
     def _clear_product_selection(self) -> None:
