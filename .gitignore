@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+.venv/
+pos_system.db
+pos_system_20251016.log
+agregar-productos.csv
+eliminar-productos.csv
