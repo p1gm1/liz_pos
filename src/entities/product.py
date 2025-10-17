@@ -14,7 +14,7 @@ class Product(BaseEntity):
     def __init__(self, id: int = None, code: str = "", name: str = "", description: str = "",
                  price: float = 0.0, cost: float = 0.0,
                  category: ProductCategory = ProductCategory.OTROS,
-                 is_active: bool = True, created_at: Optional[str] = None):
+                 is_active: bool = True, created_at: Optional[str] = None, updated_at: Optional[str] = None):
         
         self.id = id
         self.code = code
@@ -25,6 +25,7 @@ class Product(BaseEntity):
         self.category = category
         self.is_active = is_active
         self.created_at = created_at
+        self.updated_at = updated_at
 
     def validate(self) -> tuple[bool, str]:
         errors = []

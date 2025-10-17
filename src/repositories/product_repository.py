@@ -77,6 +77,8 @@ class ProductRepository(BaseRepository[Product]):
             self.session.refresh(db_product)
             
             entity.id = db_product.id
+            entity.created_at = db_product.created_at
+            entity.updated_at = db_product.updated_at
             self.logger.info(f"Product created: {entity.name} (ID: {entity.id})")
             return entity
             
@@ -103,6 +105,8 @@ class ProductRepository(BaseRepository[Product]):
                 db_product.is_active = entity.is_active
                 
                 self.session.commit()
+                self.session.refresh(db_product)
+                entity.updated_at = db_product.updated_at
                 self.logger.info(f"Product updated: {entity.name} (ID: {entity.id})")
             
             return entity
@@ -152,7 +156,8 @@ class ProductRepository(BaseRepository[Product]):
             cost=db_product.cost,
             category=ProductCategory(db_product.category),
             is_active=db_product.is_active,
-            created_at=db_product.created_at
+            created_at=db_product.created_at,
+            updated_at=db_product.updated_at
         )
     
     def _to_model(self, entity: Product) -> ProductModel:

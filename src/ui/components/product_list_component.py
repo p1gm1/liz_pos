@@ -77,6 +77,8 @@ class ProductListComponent:
                 "Precio": f"${product.price:,.2f}",
                 "Categoría": product.category.value,
                 "Estado": "✅ Activo" if product.is_active else "❌ Inactivo",
+                "Creado": product.created_at.strftime("%Y-%m-%d %H:%M:%S") if product.created_at else "N/A",
+                "Actualizado": product.updated_at.strftime("%Y-%m-%d %H:%M:%S") if product.updated_at else "N/A",
             })
         
         if table_data:
