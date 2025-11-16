@@ -104,6 +104,15 @@ class ProductManagementPage(BasePage):
 
     def _render_list_view(self) -> None:
         """Renderiza la vista de lista de productos"""
+        st.markdown("""
+            <style>
+            .green-buttons .stButton > button {
+                background-color: #4CAF50; /* Green */
+                color: white;
+            }
+            </style>
+        """, unsafe_allow_html=True)
+
         search_term = st.text_input(
             "🔍 Buscar productos...",
             placeholder="Buscar por nombre, código o categoría...",
@@ -130,6 +139,12 @@ class ProductManagementPage(BasePage):
         )
 
         if uploaded_file:
+            st.markdown("""<style>
+                        div.stButton > button:first-child {
+                            background-color: #00FF00; /* Green background */
+                            color: white; /* White text */
+                        }
+                        </style>'""", unsafe_allow_html=True)
             if xlsx_action == "Eliminar productos":
                 st.button(
                     "🗑️ Eliminar Productos desde XLSX",
