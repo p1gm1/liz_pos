@@ -129,7 +129,7 @@ class ProductManagementPage(BasePage):
 
         xlsx_action = st.selectbox(
             "Seleccione la acción a realizar con el XLSX:",
-            ("Eliminar productos", "Añadir y/o actualizar productos", "Reconteo de Inventarios")
+            ("Eliminar productos", "Reconteo de Inventarios")
         )
 
         uploaded_file = st.file_uploader(
@@ -145,19 +145,12 @@ class ProductManagementPage(BasePage):
                             color: white; /* White text */
                         }
                         </style>'""", unsafe_allow_html=True)
-            if xlsx_action == "Eliminar productos":
+            if xlsx_action == "Salida de productos":
                 st.button(
-                    "🗑️ Eliminar Productos desde XLSX",
+                    "🔄️ Registra salida de productos desde XLSX",
                     on_click=self._handle_xlsx_upload,
                     args=(uploaded_file,),
                     key="xlsx_delete_button"
-                )
-            elif xlsx_action == "Añadir y/o actualizar productos":
-                st.button(
-                    "✨ Añadir y/o Actualizar Productos desde XLSX",
-                    on_click=self._handle_add_products_xlsx,
-                    args=(uploaded_file,),
-                    key="xlsx_add_button"
                 )
             elif xlsx_action == "Reconteo de Inventarios":
                 st.button(
@@ -275,8 +268,11 @@ class ProductManagementPage(BasePage):
         st.session_state.product_mgmt_view = "list"
         st.rerun()
 
-    def _handle_add_products_xlsx(self, uploaded_file) -> None:
-        """Maneja la subida de un XLSX para añadir o actualizar productos."""
+    def _handle_inventory_recount_xlsx(self, uploaded_file) -> None:
+        """
+        Maneja la subida de un XLSX para realizar un reconteo de inventario.
+        Añade productos nuevos, actualiza existentes y elimina los que no están en el archivo.
+        """
         if not uploaded_file:
             st.warning("Por favor, sube un archivo XLSX.")
             return
@@ -292,37 +288,39 @@ class ProductManagementPage(BasePage):
 
             added_count = 0
             updated_count = 0
-            not_added_codes = []
+            deleted_count = 0
             processed_codes = set()
 
+            # Añadir y actualizar productos
             for index, row in df.iterrows():
                 code = str(row["code"])
                 if code in processed_codes:
                     continue
-
+                
+                processed_codes.add(code)
                 existing_product = self.product_service.get_product_by_code_any_status(code)
 
                 if existing_product:
+                    # Actualizar producto existente
                     product_data = {}
                     for col in df.columns:
                         if col != "code" and pd.notna(row[col]):
                             product_data[col] = row[col]
-
+                    
                     if "is_active" not in product_data:
                         product_data["is_active"] = True
-                    
+
                     if product_data:
                         self.product_service.update_product(existing_product.id, product_data)
                         updated_count += 1
                 else:
-                    # Obtener los valores de la fila
+                    # Añadir nuevo producto
                     name = row.get("name", "")
                     description = row.get("description")
                     price = row.get("price")
                     cost = row.get("cost")
                     category = row.get("category")
 
-                    # Crear el diccionario de datos del producto
                     product_data = {
                         "code": code,
                         "name": str(name) if pd.notna(name) else "null",
@@ -332,59 +330,30 @@ class ProductManagementPage(BasePage):
                         "category": str(category) if pd.notna(category) else "Otros",
                         "is_active": True
                     }
-                    
                     self.product_service.create_product(product_data)
                     added_count += 1
-                
-                processed_codes.add(code)
+
+            # Eliminar productos que no están en el XLSX
+            db_products = self.product_service.get_all_products_any_status()
+            db_codes = {p.code for p in db_products}
+            
+            codes_to_delete = db_codes - processed_codes
+
+            for code in codes_to_delete:
+                product_to_delete = self.product_service.get_product_by_code_any_status(code)
+                if product_to_delete:
+                    self.product_service.delete_product(product_to_delete.id)
+                    deleted_count += 1
 
             if added_count > 0:
                 st.success(f"{added_count} nuevos productos añadidos correctamente.")
             if updated_count > 0:
                 st.success(f"{updated_count} productos actualizados correctamente.")
-            if not_added_codes:
-                st.warning(f"No se pudieron añadir los siguientes códigos por falta de datos: {', '.join(not_added_codes)}")
-
-            st.rerun()
-
-        except Exception as e:
-            self.logger.error(f"Error al procesar el archivo XLSX para añadir/actualizar productos: {e}")
-            st.error(f"Ocurrió un error al procesar el archivo: {e}")
-
-    def _handle_inventory_recount_xlsx(self, uploaded_file) -> None:
-        """Maneja la subida de un XLSX para realizar un reconteo de inventario."""
-        if not uploaded_file:
-            st.warning("Por favor, sube un archivo XLSX.")
-            return
-
-        try:
-            df = pd.read_excel(uploaded_file, engine='openpyxl')
-
-            if "code" not in df.columns:
-                st.error("El archivo XLSX debe contener la columna 'code'.")
-                return
-
-            xlsx_codes = set(df["code"].astype(str))
-            all_products = self.product_service.get_all_products_any_status()
-
-            activated_count = 0
-            deactivated_count = 0
-
-            for product in all_products:
-                if product.code in xlsx_codes:
-                    if not product.is_active:
-                        self.product_service.update_product(product.id, {"is_active": True})
-                        activated_count += 1
-                else:
-                    if product.is_active:
-                        self.product_service.update_product(product.id, {"is_active": False})
-                        deactivated_count += 1
-
-            if activated_count > 0:
-                st.success(f"{activated_count} productos activados correctamente.")
+            if deleted_count > 0:
+                st.success(f"{deleted_count} productos eliminados correctamente.")
             
-            if deactivated_count > 0:
-                st.success(f"{deactivated_count} productos desactivados correctamente.")
+            if added_count == 0 and updated_count == 0 and deleted_count == 0:
+                st.info("No se realizaron cambios en el inventario.")
 
             st.rerun()
 

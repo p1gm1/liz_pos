@@ -212,3 +212,31 @@
 2025-11-16 13:37:38,284 - ProductRepository - INFO - Product updated: BARRRA (ID: 12)
 2025-11-16 13:37:38,286 - src.database.database - INFO - Database tables created successfully
 2025-11-16 13:37:38,287 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:52:12,115 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-16 13:52:12,119 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:52:12,119 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:52:12,120 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:52:12,121 - src.ui.app_state - INFO - Application services initialized
+2025-11-16 13:52:27,217 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:52:27,218 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:52:30,766 - ProductRepository - INFO - Product deleted: 11
+2025-11-16 13:52:30,767 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:52:30,767 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:52:37,139 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:52:37,140 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:52:41,464 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:52:41,465 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:52:42,793 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-16 13:52:42,796 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-16 13:52:42,800 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-16 13:52:42,803 - ProductRepository - INFO - Product updated: FILTRO-5 (ID: 4)
+2025-11-16 13:52:42,805 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-16 13:52:42,808 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-16 13:52:42,813 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-16 13:52:42,818 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-16 13:52:42,820 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-16 13:52:42,822 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-16 13:52:42,826 - ProductRepository - INFO - Product updated: Salsa de tomate (ID: 11)
+2025-11-16 13:52:42,828 - ProductRepository - INFO - Product updated: BARRRA (ID: 12)
+2025-11-16 13:52:42,831 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:52:42,832 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
