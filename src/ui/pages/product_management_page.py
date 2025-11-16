@@ -240,15 +240,22 @@ class ProductManagementPage(BasePage):
 
             deleted_count = 0
             not_found_codes = []
+            processed_codes = set()
 
             for code in df["code"]:
-                product = self.product_service.get_product_by_code(str(code))
+                code_str = str(code)
+                if code_str in processed_codes:
+                    continue
+                
+                product = self.product_service.get_product_by_code(code_str)
                 
                 if product:
                     self.product_service.delete_product(product.id)
                     deleted_count += 1
                 else:
-                    not_found_codes.append(str(code))
+                    not_found_codes.append(code_str)
+                
+                processed_codes.add(code_str)
 
             if deleted_count > 0:
                 st.success(f"{deleted_count} productos eliminados correctamente.")
@@ -286,9 +293,13 @@ class ProductManagementPage(BasePage):
             added_count = 0
             updated_count = 0
             not_added_codes = []
+            processed_codes = set()
 
             for index, row in df.iterrows():
                 code = str(row["code"])
+                if code in processed_codes:
+                    continue
+
                 existing_product = self.product_service.get_product_by_code_any_status(code)
 
                 if existing_product:
@@ -324,6 +335,8 @@ class ProductManagementPage(BasePage):
                     
                     self.product_service.create_product(product_data)
                     added_count += 1
+                
+                processed_codes.add(code)
 
             if added_count > 0:
                 st.success(f"{added_count} nuevos productos añadidos correctamente.")
