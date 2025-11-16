@@ -3,6 +3,7 @@ name = "liz-pos"
 version = "0.1.0"
 requires-python = ">=3.13"
 dependencies = [
+    "openpyxl>=3.1.5",
     "pandas>=2.3.3",
     "python-dotenv>=1.1.1",
     "sqlalchemy>=2.0.44",

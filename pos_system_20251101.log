@@ -1,0 +1,362 @@
+2025-11-01 15:09:00,575 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 15:09:00,645 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:09:00,648 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:09:00,655 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:09:00,661 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 15:09:23,224 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:09:23,226 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:09:25,193 - src.ui.pages.product_management_page - ERROR - Error al procesar el archivo XLSX: Excel file format cannot be determined, you must specify an engine manually.
+2025-11-01 15:09:25,196 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:09:25,197 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:17:40,064 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 15:17:40,069 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:17:40,071 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:17:40,073 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:17:40,074 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 15:17:53,386 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:17:53,388 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:17:57,840 - src.ui.pages.product_management_page - ERROR - Error al procesar el archivo XLSX: File is not a zip file
+2025-11-01 15:17:57,846 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:17:57,848 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:26:42,496 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 15:26:42,501 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:26:42,502 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:26:42,504 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:26:42,505 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 15:26:52,443 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:26:52,446 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:26:55,162 - ProductRepository - INFO - Product deleted: 1
+2025-11-01 15:26:55,164 - ProductRepository - INFO - Product deleted: 2
+2025-11-01 15:26:55,168 - ProductRepository - INFO - Product deleted: 3
+2025-11-01 15:26:55,172 - ProductRepository - INFO - Product deleted: 7
+2025-11-01 15:26:55,176 - ProductRepository - INFO - Product deleted: 8
+2025-11-01 15:26:55,178 - ProductRepository - INFO - Product deleted: 9
+2025-11-01 15:26:55,180 - ProductRepository - INFO - Product deleted: 10
+2025-11-01 15:26:55,184 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:26:55,184 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:04,207 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:04,209 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:10,107 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:10,112 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:11,326 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 15:27:11,330 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 15:27:11,335 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 15:27:11,339 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 15:27:11,343 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 15:27:11,350 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 15:27:11,361 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 15:27:11,367 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:11,368 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:18,300 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:18,302 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:26,928 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:26,930 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:28,508 - ProductRepository - INFO - Product updated: FILTRO-4 (ID: 4)
+2025-11-01 15:27:28,510 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 15:27:28,512 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 15:27:28,515 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:28,516 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:40,412 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:40,417 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:46,407 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:46,415 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 15:27:47,879 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 15:27:47,882 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 15:27:47,884 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 15:27:47,889 - ProductRepository - INFO - Product updated: FILTRO-4 (ID: 4)
+2025-11-01 15:27:47,897 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 15:27:47,903 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 15:27:47,906 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 15:27:47,909 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 15:27:47,915 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 15:27:47,919 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 15:27:47,924 - src.database.database - INFO - Database tables created successfully
+2025-11-01 15:27:47,925 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:45:33,571 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 17:45:33,577 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:45:33,578 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:45:33,579 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:45:33,581 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 17:46:04,729 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:46:04,737 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:46:05,221 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:46:05,222 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:46:11,387 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:46:11,390 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:46:11,596 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:46:11,598 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:46:29,296 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:46:29,310 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:49:08,506 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:49:08,527 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:49:10,438 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 17:49:10,441 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 17:49:10,443 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 17:49:10,444 - ProductRepository - INFO - Product updated: FILTRO-4 (ID: 4)
+2025-11-01 17:49:10,446 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 17:49:10,447 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 17:49:10,449 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 17:49:10,450 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 17:49:10,452 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 17:49:10,454 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 17:49:10,457 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:49:10,457 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:49:52,818 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:49:52,822 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:49:54,751 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 17:49:54,754 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 17:49:54,756 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 17:49:54,758 - ProductRepository - INFO - Product updated: FILTRO-4 (ID: 4)
+2025-11-01 17:49:54,759 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 17:49:54,761 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 17:49:54,763 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 17:49:54,766 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 17:49:54,770 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 17:49:54,773 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 17:49:54,785 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:49:54,786 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:52:41,474 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:52:41,483 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:52:41,486 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:52:41,487 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 17:52:50,188 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:52:50,191 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:52:52,124 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:52:52,128 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:52:56,863 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:52:56,865 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:52:58,432 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 17:52:58,437 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 17:52:58,441 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 17:52:58,448 - ProductRepository - INFO - Product updated: FILTRO-4 (ID: 4)
+2025-11-01 17:52:58,453 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 17:52:58,458 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 17:52:58,462 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 17:52:58,465 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 17:52:58,471 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 17:52:58,474 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 17:52:58,496 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:52:58,497 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:53:56,953 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:53:56,959 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:53:56,962 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:53:56,963 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 17:54:03,617 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:54:03,619 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:54:08,596 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:54:08,606 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:54:10,441 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 17:54:10,451 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 17:54:10,458 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 17:54:10,466 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 17:54:10,471 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 17:54:10,476 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 17:54:10,482 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 17:54:10,488 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 17:54:10,492 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 17:54:10,506 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:54:10,507 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:54:49,876 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 17:54:49,884 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:54:49,885 - src.database.database - INFO - 🔄 Ejecutando migración: agregando columna 'supplier'...
+2025-11-01 17:54:49,887 - src.database.database - INFO - ✅ Migración completada: columna 'supplier' agregada
+2025-11-01 17:54:49,888 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:54:49,890 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 17:54:59,930 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:54:59,934 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:55:08,640 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:55:08,642 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:55:11,053 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:55:11,054 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:58:42,041 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 17:58:42,051 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:58:42,052 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:58:42,054 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:58:42,055 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 17:58:47,493 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:58:47,496 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:58:55,260 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:58:55,263 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:58:56,995 - ProductRepository - INFO - Product created: FILTRO-1 (ID: 1)
+2025-11-01 17:58:57,004 - ProductRepository - INFO - Product created: FILTRO-2 (ID: 2)
+2025-11-01 17:58:57,010 - ProductRepository - INFO - Product created: FILTRO-3 (ID: 3)
+2025-11-01 17:58:57,019 - ProductRepository - INFO - Product created: FILTRO-5 (ID: 4)
+2025-11-01 17:58:57,029 - ProductRepository - INFO - Product created: HERRAMIENTA-1 (ID: 5)
+2025-11-01 17:58:57,035 - ProductRepository - INFO - Product created: HERRAMIENTA-2 (ID: 6)
+2025-11-01 17:58:57,047 - ProductRepository - INFO - Product created: HERRAMIENTA-3 (ID: 7)
+2025-11-01 17:58:57,059 - ProductRepository - INFO - Product created: HERRAMIENTA-4 (ID: 8)
+2025-11-01 17:58:57,067 - ProductRepository - INFO - Product created: HERRAMIENTA-5 (ID: 9)
+2025-11-01 17:58:57,075 - ProductRepository - INFO - Product created: HERRAMIENTA-6 (ID: 10)
+2025-11-01 17:58:57,169 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:58:57,171 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 17:59:51,579 - src.database.database - INFO - Database tables created successfully
+2025-11-01 17:59:51,583 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:02:06,422 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:02:06,427 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:02:08,108 - ProductRepository - INFO - Product deleted: 1
+2025-11-01 18:02:08,114 - ProductRepository - INFO - Product deleted: 2
+2025-11-01 18:02:08,123 - ProductRepository - INFO - Product deleted: 3
+2025-11-01 18:02:08,127 - ProductRepository - INFO - Product deleted: 7
+2025-11-01 18:02:08,131 - ProductRepository - INFO - Product deleted: 8
+2025-11-01 18:02:08,134 - ProductRepository - INFO - Product deleted: 9
+2025-11-01 18:02:08,136 - ProductRepository - INFO - Product deleted: 10
+2025-11-01 18:02:08,140 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:02:08,141 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:02:43,103 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:02:43,106 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:02:47,224 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:02:47,228 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:02:53,061 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:02:53,063 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:02:54,378 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 18:02:54,381 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 18:02:54,386 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 18:02:54,390 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 18:02:54,397 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 18:02:54,414 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 18:02:54,422 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 18:02:54,424 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:02:54,425 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:03:07,632 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:03:07,637 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:03:10,422 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:03:10,427 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:03:18,224 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:03:18,237 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:03:19,609 - ProductRepository - INFO - Product updated: FILTRO-5 (ID: 4)
+2025-11-01 18:03:19,612 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 18:03:19,614 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 18:03:19,618 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:03:19,618 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:08:42,429 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 18:08:42,439 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:08:42,441 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:08:42,444 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:08:42,447 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 18:09:00,383 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:09:00,394 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:09:05,939 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:09:05,942 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:09:07,981 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 18:09:07,983 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 18:09:07,984 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 18:09:07,988 - ProductRepository - INFO - Product updated: FILTRO-5 (ID: 4)
+2025-11-01 18:09:07,991 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 18:09:07,994 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 18:09:07,996 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 18:09:07,997 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 18:09:07,999 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 18:09:08,001 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 18:09:08,003 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:09:08,004 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:11:29,465 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:11:29,494 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:11:30,932 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 18:11:30,934 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 18:11:30,937 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 18:11:30,939 - ProductRepository - INFO - Product updated: FILTRO-5 (ID: 4)
+2025-11-01 18:11:30,941 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 18:11:30,943 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 18:11:30,945 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 18:11:30,948 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 18:11:30,951 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 18:11:30,953 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 18:11:30,961 - ProductRepository - INFO - Product created: Salsa de tomate (ID: 11)
+2025-11-01 18:11:30,963 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:11:30,964 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:15:07,047 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:15:07,061 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:15:13,582 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:15:13,585 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:15:15,530 - ProductRepository - INFO - Product deleted: 11
+2025-11-01 18:15:15,535 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:15:15,535 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:16:23,251 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:16:23,294 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:16:25,734 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:16:25,737 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:16:31,553 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:16:31,556 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:16:32,916 - ProductRepository - INFO - Product updated: Salsa de tomate (ID: 11)
+2025-11-01 18:16:32,919 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:16:32,920 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:17:02,759 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-01 18:17:02,787 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:17:02,797 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:17:02,807 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:17:02,816 - src.ui.app_state - INFO - Application services initialized
+2025-11-01 18:18:40,516 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:18:40,545 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:20:16,601 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:20:16,604 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:20:19,064 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 18:20:19,068 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 18:20:19,073 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 18:20:19,076 - ProductRepository - INFO - Product updated: FILTRO-5 (ID: 4)
+2025-11-01 18:20:19,080 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 18:20:19,082 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 18:20:19,085 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 18:20:19,088 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 18:20:19,090 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 18:20:19,095 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 18:20:19,098 - ProductRepository - INFO - Product updated: Salsa de tomate (ID: 11)
+2025-11-01 18:20:19,104 - ProductRepository - ERROR - Error creating product: (sqlite3.IntegrityError) NOT NULL constraint failed: products.cost
+[SQL: INSERT INTO products (code, name, description, price, cost, category, is_active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('38000924422', 'BARRRA', 'NUTRRIGAIN', 0.0, nan, 'Herramientas', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-01 18:20:19,104 - src.services.product_service - ERROR - Error creating product: (sqlite3.IntegrityError) NOT NULL constraint failed: products.cost
+[SQL: INSERT INTO products (code, name, description, price, cost, category, is_active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('38000924422', 'BARRRA', 'NUTRRIGAIN', 0.0, nan, 'Herramientas', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-01 18:20:19,104 - src.ui.pages.product_management_page - ERROR - Error al procesar el archivo XLSX para añadir/actualizar productos: (sqlite3.IntegrityError) NOT NULL constraint failed: products.cost
+[SQL: INSERT INTO products (code, name, description, price, cost, category, is_active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('38000924422', 'BARRRA', 'NUTRRIGAIN', 0.0, nan, 'Herramientas', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-01 18:20:19,109 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:20:19,111 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:21:17,061 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:21:17,064 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:21:18,741 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-01 18:21:18,748 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-01 18:21:18,753 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-01 18:21:18,759 - ProductRepository - INFO - Product updated: FILTRO-5 (ID: 4)
+2025-11-01 18:21:18,764 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-01 18:21:18,767 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-01 18:21:18,770 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-01 18:21:18,772 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-01 18:21:18,776 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-01 18:21:18,784 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-01 18:21:18,786 - ProductRepository - INFO - Product updated: Salsa de tomate (ID: 11)
+2025-11-01 18:21:18,792 - ProductRepository - INFO - Product created: BARRRA (ID: 12)
+2025-11-01 18:21:18,881 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:21:18,882 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:24:12,400 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:24:12,457 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:24:28,013 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:24:28,024 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:24:33,923 - ProductRepository - INFO - Product deleted: 12
+2025-11-01 18:24:33,932 - ProductRepository - INFO - Product deleted: 11
+2025-11-01 18:24:33,948 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:24:33,951 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:25:32,409 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:25:32,416 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:25:41,143 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:25:41,160 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:25:46,031 - ProductRepository - INFO - Product updated: BARRRA (ID: 12)
+2025-11-01 18:25:46,039 - ProductRepository - INFO - Product updated: Salsa de tomate (ID: 11)
+2025-11-01 18:25:46,049 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:25:46,051 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:26:47,254 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:26:47,265 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:26:55,817 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:26:55,820 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:26:57,476 - ProductRepository - INFO - Product deleted: 11
+2025-11-01 18:26:57,480 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:26:57,481 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:29:11,568 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:29:11,575 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:29:17,715 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:29:17,717 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-01 18:29:18,969 - ProductRepository - INFO - Product updated: BARRRA (ID: 12)
+2025-11-01 18:29:18,972 - src.database.database - INFO - Database tables created successfully
+2025-11-01 18:29:18,973 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos

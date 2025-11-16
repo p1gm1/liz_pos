@@ -116,33 +116,40 @@ class ProductManagementPage(BasePage):
         )
 
         st.markdown("---")
-        st.subheader("Actualización de Inventario por CSV")
+        st.subheader("Actualización de Inventario por XLSX")
 
-        csv_action = st.selectbox(
-            "Seleccione la acción a realizar con el CSV:",
-            ("Eliminar productos", "Añadir y/o actualizar productos")
+        xlsx_action = st.selectbox(
+            "Seleccione la acción a realizar con el XLSX:",
+            ("Eliminar productos", "Añadir y/o actualizar productos", "Reconteo de Inventarios")
         )
 
         uploaded_file = st.file_uploader(
-            "Selecciona un archivo CSV",
-            type=["csv"],
-            key=f"csv_uploader_{csv_action}" # Unique key
+            "Selecciona un archivo XLSX",
+            type=["xlsx"],
+            key=f"xlsx_uploader_{xlsx_action}" # Unique key
         )
 
         if uploaded_file:
-            if csv_action == "Eliminar productos":
+            if xlsx_action == "Eliminar productos":
                 st.button(
-                    "🗑️ Eliminar Productos desde CSV",
-                    on_click=self._handle_csv_upload,
+                    "🗑️ Eliminar Productos desde XLSX",
+                    on_click=self._handle_xlsx_upload,
                     args=(uploaded_file,),
-                    key="csv_delete_button"
+                    key="xlsx_delete_button"
                 )
-            elif csv_action == "Añadir y/o actualizar productos":
+            elif xlsx_action == "Añadir y/o actualizar productos":
                 st.button(
-                    "✨ Añadir y/o Actualizar Productos desde CSV",
-                    on_click=self._handle_add_products_csv,
+                    "✨ Añadir y/o Actualizar Productos desde XLSX",
+                    on_click=self._handle_add_products_xlsx,
                     args=(uploaded_file,),
-                    key="csv_add_button"
+                    key="xlsx_add_button"
+                )
+            elif xlsx_action == "Reconteo de Inventarios":
+                st.button(
+                    "🔄 Realizar Reconteo de Inventarios",
+                    on_click=self._handle_inventory_recount_xlsx,
+                    args=(uploaded_file,),
+                    key="xlsx_recount_button"
                 )
 
     def _render_form_view(self) -> None:
@@ -203,17 +210,17 @@ class ProductManagementPage(BasePage):
             self.logger.error(f"Error saving product: {str(e)}")
             st.error(f"❌ Error al guardar el producto: {str(e)}")
 
-    def _handle_csv_upload(self, uploaded_file) -> None:
-        """Maneja la subida de un CSV para eliminar productos."""
+    def _handle_xlsx_upload(self, uploaded_file) -> None:
+        """Maneja la subida de un XLSX para eliminar productos."""
         if not uploaded_file:
-            st.warning("Por favor, sube un archivo CSV.")
+            st.warning("Por favor, sube un archivo XLSX.")
             return
 
         try:
-            df = pd.read_csv(uploaded_file)
+            df = pd.read_excel(uploaded_file, engine='openpyxl')
 
             if "code" not in df.columns:
-                st.error("El archivo CSV debe contener la columna 'code'.")
+                st.error("El archivo XLSX debe contener la columna 'code'.")
                 return
 
             deleted_count = 0
@@ -237,7 +244,7 @@ class ProductManagementPage(BasePage):
             st.rerun()
 
         except Exception as e:
-            self.logger.error(f"Error al procesar el archivo CSV: {e}")
+            self.logger.error(f"Error al procesar el archivo XLSX: {e}")
             st.error(f"Ocurrió un error al procesar el archivo: {e}")
 
     def _handle_cancel_form(self) -> None:
@@ -246,17 +253,19 @@ class ProductManagementPage(BasePage):
         st.session_state.product_mgmt_view = "list"
         st.rerun()
 
-    def _handle_add_products_csv(self, uploaded_file) -> None:
-        """Maneja la subida de un CSV para añadir o actualizar productos."""
+    def _handle_add_products_xlsx(self, uploaded_file) -> None:
+        """Maneja la subida de un XLSX para añadir o actualizar productos."""
         if not uploaded_file:
-            st.warning("Por favor, sube un archivo CSV.")
+            st.warning("Por favor, sube un archivo XLSX.")
             return
 
         try:
-            df = pd.read_csv(uploaded_file)
+            df = pd.read_excel(uploaded_file, engine='openpyxl')
 
-            if "code" not in df.columns:
-                st.error("El archivo CSV debe contener la columna 'code'.")
+            required_columns = ["code", "name"]
+            missing_columns = [col for col in required_columns if col not in df.columns]
+            if missing_columns:
+                st.error(f"El archivo XLSX debe contener las siguientes columnas: {', '.join(missing_columns)}")
                 return
 
             added_count = 0
@@ -280,21 +289,26 @@ class ProductManagementPage(BasePage):
                         self.product_service.update_product(existing_product.id, product_data)
                         updated_count += 1
                 else:
-                    required_cols_for_creation = ["name", "price", "cost", "category"]
-                    if all(col in df.columns and pd.notna(row[col]) for col in required_cols_for_creation):
-                        product_data = {
-                            "code": code,
-                            "name": str(row["name"]),
-                            "description": str(row.get("description", "")),
-                            "price": float(row["price"]),
-                            "cost": float(row["cost"]),
-                            "category": str(row["category"]),
-                            "is_active": True 
-                        }
-                        self.product_service.create_product(product_data)
-                        added_count += 1
-                    else:
-                        not_added_codes.append(code)
+                    # Obtener los valores de la fila
+                    name = row.get("name", "")
+                    description = row.get("description")
+                    price = row.get("price")
+                    cost = row.get("cost")
+                    category = row.get("category")
+
+                    # Crear el diccionario de datos del producto
+                    product_data = {
+                        "code": code,
+                        "name": str(name) if pd.notna(name) else "null",
+                        "description": str(description) if pd.notna(description) else "null",
+                        "price": float(price) if pd.notna(price) else 0.0,
+                        "cost": float(cost) if pd.notna(cost) else 0.0,
+                        "category": str(category) if pd.notna(category) else "Otros",
+                        "is_active": True
+                    }
+                    
+                    self.product_service.create_product(product_data)
+                    added_count += 1
 
             if added_count > 0:
                 st.success(f"{added_count} nuevos productos añadidos correctamente.")
@@ -306,7 +320,48 @@ class ProductManagementPage(BasePage):
             st.rerun()
 
         except Exception as e:
-            self.logger.error(f"Error al procesar el archivo CSV para añadir/actualizar productos: {e}")
+            self.logger.error(f"Error al procesar el archivo XLSX para añadir/actualizar productos: {e}")
+            st.error(f"Ocurrió un error al procesar el archivo: {e}")
+
+    def _handle_inventory_recount_xlsx(self, uploaded_file) -> None:
+        """Maneja la subida de un XLSX para realizar un reconteo de inventario."""
+        if not uploaded_file:
+            st.warning("Por favor, sube un archivo XLSX.")
+            return
+
+        try:
+            df = pd.read_excel(uploaded_file, engine='openpyxl')
+
+            if "code" not in df.columns:
+                st.error("El archivo XLSX debe contener la columna 'code'.")
+                return
+
+            xlsx_codes = set(df["code"].astype(str))
+            all_products = self.product_service.get_all_products_any_status()
+
+            activated_count = 0
+            deactivated_count = 0
+
+            for product in all_products:
+                if product.code in xlsx_codes:
+                    if not product.is_active:
+                        self.product_service.update_product(product.id, {"is_active": True})
+                        activated_count += 1
+                else:
+                    if product.is_active:
+                        self.product_service.update_product(product.id, {"is_active": False})
+                        deactivated_count += 1
+
+            if activated_count > 0:
+                st.success(f"{activated_count} productos activados correctamente.")
+            
+            if deactivated_count > 0:
+                st.success(f"{deactivated_count} productos desactivados correctamente.")
+
+            st.rerun()
+
+        except Exception as e:
+            self.logger.error(f"Error al procesar el archivo XLSX para reconteo: {e}")
             st.error(f"Ocurrió un error al procesar el archivo: {e}")
 
     def _clear_product_selection(self) -> None:

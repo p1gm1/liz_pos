@@ -1,10 +1,10 @@
 import streamlit as st
 
-from src.ui.app_state import StreamlitAppState
+from src.ui.app_state import IAppState
 from src.ui.pages import PageRegistry
 
 
-def render_sidebar(app_state: StreamlitAppState, page_registry: PageRegistry) -> str:
+def render_sidebar(app_state: IAppState, page_registry: PageRegistry) -> str:
     """Renderiza la sidebar y retorna la página seleccionada - SRP"""
     with st.sidebar:
         st.header("Panel de Control")

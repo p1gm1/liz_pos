@@ -52,10 +52,6 @@ class ProductService:
         required_fields = [
             'code',
             'name',
-            'description',
-            'price',
-            'cost',
-            'category',
         ]
         missing_fields = [field for field in required_fields if field not in product_data]
         
@@ -83,7 +79,7 @@ class ProductService:
         product_kwargs = {
             'code': product_data['code'],
             'name': product_data['name'],
-            'price': float(product_data['price']),
+            'price': float(product_data.get('price', 0.0)),
             'description': product_data.get('description', ''),
             'cost': float(product_data.get('cost', 0.0)),
             'category': category,
@@ -105,6 +101,8 @@ class ProductService:
                     value = float(value)
                 elif field == 'is_active' and isinstance(value, str):
                     value = value.lower() == 'true'
+                elif field == 'category':
+                    value = self._get_product_category(value)
                 
                 setattr(product, field, value)
 

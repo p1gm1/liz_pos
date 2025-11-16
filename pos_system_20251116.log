@@ -1,0 +1,85 @@
+2025-11-16 12:47:05,815 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-16 12:47:05,819 - src.database.database - INFO - Database tables created successfully
+2025-11-16 12:47:05,819 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 12:47:05,820 - src.database.database - INFO - Database tables created successfully
+2025-11-16 12:47:05,821 - src.ui.app_state - INFO - Application services initialized
+2025-11-16 12:47:20,877 - src.database.database - INFO - Database tables created successfully
+2025-11-16 12:47:20,878 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 12:47:22,734 - ProductRepository - INFO - Product deleted: 1
+2025-11-16 12:47:22,736 - ProductRepository - INFO - Product deleted: 2
+2025-11-16 12:47:22,737 - ProductRepository - INFO - Product deleted: 3
+2025-11-16 12:47:22,738 - ProductRepository - INFO - Product deleted: 4
+2025-11-16 12:47:22,739 - ProductRepository - INFO - Product deleted: 5
+2025-11-16 12:47:22,741 - ProductRepository - INFO - Product deleted: 6
+2025-11-16 12:47:22,742 - ProductRepository - INFO - Product deleted: 7
+2025-11-16 12:47:22,743 - ProductRepository - INFO - Product deleted: 8
+2025-11-16 12:47:22,745 - ProductRepository - INFO - Product deleted: 9
+2025-11-16 12:47:22,747 - ProductRepository - INFO - Product deleted: 10
+2025-11-16 12:47:22,749 - src.database.database - INFO - Database tables created successfully
+2025-11-16 12:47:22,750 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 12:47:34,289 - src.database.database - INFO - Database tables created successfully
+2025-11-16 12:47:34,295 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 12:47:41,083 - src.database.database - INFO - Database tables created successfully
+2025-11-16 12:47:41,088 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 12:47:43,239 - ProductRepository - INFO - Product updated: FILTRO-1 (ID: 1)
+2025-11-16 12:47:43,245 - ProductRepository - INFO - Product updated: FILTRO-2 (ID: 2)
+2025-11-16 12:47:43,250 - ProductRepository - INFO - Product updated: FILTRO-3 (ID: 3)
+2025-11-16 12:47:43,255 - ProductRepository - INFO - Product updated: FILTRO-5 (ID: 4)
+2025-11-16 12:47:43,260 - ProductRepository - INFO - Product updated: HERRAMIENTA-1 (ID: 5)
+2025-11-16 12:47:43,265 - ProductRepository - INFO - Product updated: HERRAMIENTA-2 (ID: 6)
+2025-11-16 12:47:43,268 - ProductRepository - INFO - Product updated: HERRAMIENTA-3 (ID: 7)
+2025-11-16 12:47:43,271 - ProductRepository - INFO - Product updated: HERRAMIENTA-4 (ID: 8)
+2025-11-16 12:47:43,273 - ProductRepository - INFO - Product updated: HERRAMIENTA-5 (ID: 9)
+2025-11-16 12:47:43,275 - ProductRepository - INFO - Product updated: HERRAMIENTA-6 (ID: 10)
+2025-11-16 12:47:43,277 - ProductRepository - INFO - Product updated: Salsa de tomate (ID: 11)
+2025-11-16 12:47:43,280 - ProductRepository - INFO - Product updated: BARRRA (ID: 12)
+2025-11-16 12:47:43,281 - src.database.database - INFO - Database tables created successfully
+2025-11-16 12:47:43,281 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:00:01,378 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-16 13:00:01,383 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:00:01,384 - src.database.database - INFO - 🔄 Ejecutando migración: agregando columna 'supplier'...
+2025-11-16 13:00:01,384 - src.database.database - INFO - ✅ Migración completada: columna 'supplier' agregada
+2025-11-16 13:00:01,385 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:00:01,386 - src.ui.app_state - INFO - Application services initialized
+2025-11-16 13:00:07,532 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:00:07,537 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:00:14,415 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:00:14,416 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:00:16,097 - src.services.product_service - WARNING - Categoría 'nan' inválida. Usando categoría por defecto.
+2025-11-16 13:00:16,098 - ProductRepository - ERROR - Error creating product: (sqlite3.IntegrityError) NOT NULL constraint failed: products.cost
+[SQL: INSERT INTO products (code, name, description, price, cost, category, is_active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('4f2b9c71-8b25-4a73-92b3-5c2df0a88d4c', 'FILTRO-1', 'nan', 0.0, nan, 'Otros', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-16 13:00:16,098 - src.services.product_service - ERROR - Error creating product: (sqlite3.IntegrityError) NOT NULL constraint failed: products.cost
+[SQL: INSERT INTO products (code, name, description, price, cost, category, is_active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('4f2b9c71-8b25-4a73-92b3-5c2df0a88d4c', 'FILTRO-1', 'nan', 0.0, nan, 'Otros', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-16 13:00:16,098 - src.ui.pages.product_management_page - ERROR - Error al procesar el archivo XLSX para añadir/actualizar productos: (sqlite3.IntegrityError) NOT NULL constraint failed: products.cost
+[SQL: INSERT INTO products (code, name, description, price, cost, category, is_active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at]
+[parameters: ('4f2b9c71-8b25-4a73-92b3-5c2df0a88d4c', 'FILTRO-1', 'nan', 0.0, nan, 'Otros', 1)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-11-16 13:00:16,100 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:00:16,100 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:07:23,124 - src.database.database - INFO - Database singleton initialized successfully
+2025-11-16 13:07:23,128 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:07:23,128 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:07:23,129 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:07:23,130 - src.ui.app_state - INFO - Application services initialized
+2025-11-16 13:07:28,004 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:07:28,006 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:07:32,956 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:07:32,957 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
+2025-11-16 13:07:34,598 - ProductRepository - INFO - Product created: FILTRO-1 (ID: 1)
+2025-11-16 13:07:34,600 - ProductRepository - INFO - Product created: FILTRO-2 (ID: 2)
+2025-11-16 13:07:34,601 - ProductRepository - INFO - Product created: FILTRO-3 (ID: 3)
+2025-11-16 13:07:34,602 - ProductRepository - INFO - Product created: FILTRO-5 (ID: 4)
+2025-11-16 13:07:34,603 - ProductRepository - INFO - Product created: HERRAMIENTA-1 (ID: 5)
+2025-11-16 13:07:34,605 - ProductRepository - INFO - Product created: HERRAMIENTA-2 (ID: 6)
+2025-11-16 13:07:34,606 - ProductRepository - INFO - Product created: HERRAMIENTA-3 (ID: 7)
+2025-11-16 13:07:34,608 - ProductRepository - INFO - Product created: HERRAMIENTA-4 (ID: 8)
+2025-11-16 13:07:34,609 - ProductRepository - INFO - Product created: HERRAMIENTA-5 (ID: 9)
+2025-11-16 13:07:34,611 - ProductRepository - INFO - Product created: HERRAMIENTA-6 (ID: 10)
+2025-11-16 13:07:34,612 - ProductRepository - INFO - Product created: Salsa de tomate (ID: 11)
+2025-11-16 13:07:34,613 - ProductRepository - INFO - Product created: BARRRA (ID: 12)
+2025-11-16 13:07:34,614 - src.database.database - INFO - Database tables created successfully
+2025-11-16 13:07:34,614 - src.database.database - INFO - ✅ Columna 'supplier' ya existe en la base de datos
