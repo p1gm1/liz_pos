@@ -1,113 +1,55 @@
 # POS-POC - Punto de Venta (Prueba de Concepto)
 
-## Descripción General
+## Funcionalidades Clave
 
-Este proyecto es una Prueba de Concepto (POC) de un sistema de Punto de Venta (POS) simple, diseñado para ser compatible con las regulaciones de la DIAN en Colombia. La aplicación está construida con Python y Streamlit, y utiliza una base de datos SQLite para almacenar la información de productos, clientes y facturas.
+### Gestión de Productos con XLSX
 
-## Estructura del Proyecto
+La página de "Gestión de Productos" ofrece potentes herramientas para actualizar el inventario masivamente usando archivos XLSX.
 
-A continuación se describe la función de cada archivo dentro del proyecto:
-
-- **`.gitignore`**: Especifica los archivos y directorios que Git debe ignorar. Esto es útil para evitar que archivos temporales, dependencias y otros archivos no esenciales se incluyan en el control de versiones.
-- **`app.py`**: Es el punto de entrada principal de la aplicación Streamlit. Se encarga de la navegación entre las diferentes páginas (módulos) de la aplicación, como el Dashboard, Punto de Venta, Gestión de Productos, etc.
-- **`container.py`**: Implementa un contenedor de inyección de dependencias. Se encarga de instanciar y gestionar las dependencias de la aplicación, como los servicios y repositorios, asegurando que cada componente reciba las instancias que necesita para funcionar.
-- **`database.py`**: Contiene la configuración y gestión de la conexión a la base de datos SQLite. Define el motor de SQLAlchemy, la sesión de la base de datos y funciones para inicializar la base de datos.
-- **`database_setup.py`**: Script utilizado para inicializar o recrear la base de datos. Utiliza las definiciones de `database.py` y `models.py` para crear las tablas necesarias.
-- **`models.py`**: Define los modelos de datos de la aplicación utilizando SQLAlchemy ORM. Aquí se definen las tablas `productos`, `clientes`, `facturas` y `factura_items` con sus respectivas columnas y relaciones.
-- **`pytest.ini`**: Archivo de configuración para Pytest. Permite definir opciones y configuraciones para la ejecución de las pruebas unitarias.
-- **`python-3.12.8-amd64.exe`**: Instalador de Python. No es parte del código fuente del proyecto.
-- **`README.md`**: Este archivo. Contiene la documentación del proyecto.
-- **`requirements.txt`**: Lista todas las dependencias de Python necesarias para ejecutar el proyecto. Se utiliza para instalar las librerías con `pip install -r requirements.txt`.
-
-### Directorio `pages`
-
-Este directorio contiene los diferentes módulos o páginas de la aplicación Streamlit.
-
-- **`__init__.py`**: Archivo vacío que indica a Python que el directorio `pages` es un paquete.
-- **`advanced_reports.py`**: Módulo para generar reportes avanzados. (Actualmente vacío o con funcionalidad limitada).
-- **`customer_management.py`**: Módulo para la gestión de clientes. Permite crear, editar y eliminar clientes.
-- **`dashboard.py`**: Página principal de la aplicación. Muestra un resumen general de la información del sistema, como ventas recientes, productos más vendidos, etc.
-- **`invoice_history.py`**: Módulo para ver el historial de facturas generadas.
-- **`point_of_sale.py`**: Módulo principal del Punto de Venta. Permite seleccionar productos, asociar un cliente y generar una nueva factura.
-- **`product_management.py`**: Módulo para la gestión de productos. Permite crear, editar y eliminar productos del inventario.
-
-### Directorio `repository`
-
-Este directorio contiene la capa de acceso a datos. Se encarga de la comunicación directa con la base de datos.
-
-- **`__init__.py`**: Archivo vacío que indica a Python que el directorio `repository` es un paquete.
-- **`base_repository.py`**: Define la interfaz base para los repositorios. (Actualmente vacío o con funcionalidad limitada).
-- **`sqlite_repository.py`**: Implementación del repositorio para una base de datos SQLite. Contiene la lógica para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos.
-
-### Directorio `services`
-
-Este directorio contiene la lógica de negocio de la aplicación.
-
-- **`__init__.py`**: Archivo vacío que indica a Python que el directorio `services` es un paquete.
-- **`customer_service.py`**: Contiene la lógica de negocio para la gestión de clientes. Actúa como intermediario entre la interfaz de usuario y el repositorio de clientes.
-- **`invoice_service.py`**: Contiene la lógica de negocio para la gestión de facturas. Se encarga de crear nuevas facturas, calcular totales y generar el texto de la factura.
-- **`product_service.py`**: Contiene la lógica de negocio para la gestión de productos.
-
-### Directorio `tests`
-
-Este directorio contiene las pruebas unitarias del proyecto.
-
-- **`conftest.py`**: Archivo de configuración para Pytest. Permite definir fixtures y otras configuraciones para las pruebas.
-- **`test_customer_service.py`**: Pruebas unitarias para `CustomerService`.
-- **`test_example_unittest.py`**: Archivo de ejemplo de pruebas unitarias.
-- **`test_product_service.py`**: Pruebas unitarias para `ProductService`.
-
-### Directorio `utils`
-
-Este directorio contiene utilidades y funciones auxiliares utilizadas en todo el proyecto.
-
-- **`__init__.py`**: Archivo vacío que indica a Python que el directorio `utils` es un paquete.
-- **`logger.py`**: Configuración del sistema de logging para registrar eventos y errores de la aplicación.
-- **`validators.py`**: Funciones para validar datos, como formatos de correo electrónico, números de documento, etc. (Actualmente vacío o con funcionalidad limitada).
+1.  **Eliminar Productos**: Permite eliminar productos de la base de datos en base a una lista de códigos de producto en un archivo XLSX.
+2.  **Reconteo de Inventarios**: Una función de sincronización completa:
+    -   **Añade y Actualiza**: Los productos en el archivo XLSX son añadidos a la base de datos si no existen, o actualizados si ya existen. El archivo debe contener columnas como `code`, `name`, `price`, etc.
+    -   **Elimina**: Cualquier producto que exista en la base de datos pero no esté presente en el archivo XLSX será eliminado. Esto asegura que el inventario en la base de datos sea un reflejo exacto del contenido del archivo.
 
 ## Instalación y Ejecución
 
 1.  **Clonar el repositorio:**
     ```bash
     git clone <URL-del-repositorio>
-    cd POS-POC
+    cd liz-PoS
     ```
 
-2.  **Crear un entorno virtual:**
-    ```bash
-    python -m venv .venv
-    ```
+2.  **Instalar**
+    * Si no tienes `uv` instalado, puedes instalarlo siguiendo las instrucciones en su [sitio web oficial](https://github.com/astral-sh/uv). 
+    * Debes tener python
 
-3.  **Activar el entorno virtual:**
-    -   En Windows:
-        ```bash
-        .venv\Scripts\activate
-        ```
-    -   En macOS y Linux:
-        ```bash
-        source .venv/bin/activate
-        ```
-
-4.  **Instalar las dependencias:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-5.  **Inicializar la base de datos:**
-    ```bash
-    python database_setup.py
-    ```
-
-6.  **Ejecutar la aplicación:**
-    ```bash
-    streamlit run app.py
-    ```
+5.  **Ejecutar la aplicación:**
+    Haz doble click en run_app.command
 
 ## Dependencias
 
-Las dependencias del proyecto se encuentran en el archivo `requirements.txt` y se pueden instalar con `pip`. Las dependencias principales son:
+Las dependencias del proyecto se gestionan con `uv` y están definidas en `pyproject.toml`. Las dependencias principales son:
 
-- `streamlit`: Para la creación de la interfaz de usuario web.
-- `SQLAlchemy`: Para el ORM y la interacción con la base de datos.
-- `pandas`: Para la manipulación y visualización de datos.
-- `pytest`: Para la ejecución de pruebas unitarias.
+-   `streamlit`: Para la creación de la interfaz de usuario web.
+-   `sqlalchemy`: Para el ORM y la interacción con la base de datos.
+-   `pandas`: Para la manipulación de datos, especialmente con archivos XLSX.
+-   `openpyxl`: Requerido por `pandas` para trabajar con archivos Excel.
+
+### Directorio `src`
+
+Contiene todo el código fuente de la aplicación.
+
+-   **`main.py`**: Punto de entrada principal de la aplicación Streamlit. Se encarga de inicializar la base de datos y renderizar la interfaz de usuario.
+-   **`database/`**: Módulo para todo lo relacionado con la base de datos.
+    -   `database.py`: Configuración de la conexión a la base de datos SQLite con SQLAlchemy.
+    -   `models.py`: Define los modelos de datos (tablas) utilizando SQLAlchemy ORM.
+    -   `migrations.py`: Script para manejar futuras migraciones de la base de datos.
+-   **`entities/`**: Define las entidades de negocio principales de la aplicación (ej. `Product`).
+-   **`repositories/`**: Capa de acceso a datos, responsable de la comunicación directa con la base de datos (operaciones CRUD).
+-   **`services/`**: Capa de lógica de negocio. Coordina la interacción entre la UI y los repositorios.
+-   **`ui/`**: Contiene todos los componentes de la interfaz de usuario construidos con Streamlit.
+    -   `app_state.py`: Gestiona el estado de la aplicación.
+    -   `sidebar.py`: Define la barra de navegación lateral.
+    -   `components/`: Componentes de UI reutilizables (formularios, listas, etc.).
+    -   `pages/`: Las diferentes páginas o vistas de la aplicación (ej. Gestión de Productos).
+-   **`utils/`**: Utilidades y funciones auxiliares, como la configuración del logger.
