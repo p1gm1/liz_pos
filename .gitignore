@@ -6,6 +6,3 @@ pos_system.db
 agregar-productos.csv
 eliminar-productos.csv
 **/__pycache__/**
-dist/
-build/
-requirements.txt
